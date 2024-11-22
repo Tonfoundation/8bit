@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: url('../public/bit_pix.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.button {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  background-color: white;
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 15%;
+  box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+
+.left-button {
+  top: 20px;
+  left: 40px;
+}
+
+
+.right-button {
+  top: 20px;
+  right: 40px;
+}
+
+
+.spinner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid black;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+.image-container {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 200px; 
+  height: 200px;
+}
+
+.spinnable-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.spinning .spinnable-image {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.moving-image {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.25;
+  animation: move-diagonal 4s linear forwards;
+}
+
+.moving-image.top-left {
+  top: 0;
+  left: 0;
+}
+
+.moving-image.top-right {
+  top: 0;
+  right: 0;
+}
+
+.moving-image.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.moving-image.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.moving-image {
+  position: fixed; 
+  width: 150px; 
+  height: 150px;
+  opacity: 0.25; 
+  animation: move-diagonal 4s linear forwards;
+  z-index: 9999; 
+}
+
+.moving-image.top-left {
+  top: 0;
+  left: 0;
+}
+
+.moving-image.top-right {
+  top: 0;
+  right: 0;
+}
+
+.moving-image.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.moving-image.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes move-diagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(calc(100vw - 150px), calc(100vh - 150px));
+  }
+}
+
+.diagonal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.centered-text h1 {
+  color: red;
+  font-size: 98px;
+  margin: 0;
+}
+
+.centered-text p {
+  color: black;
+  font-size: 74px;
+  margin: 10px 0 0;
+}
+
+.centered-text .small-text {
+  font-size: 25px;
+  margin-top: 5px;
+  color: black;
+}
